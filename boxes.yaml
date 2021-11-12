@@ -1,0 +1,30 @@
+---
+config:
+  domain: 'local'
+  network: '192.168.56'
+nodes:
+  ansible:
+    box: centos/7
+    memory: 1024
+    cpus: 2
+    network:
+      forwarded_port:
+        guess: 80
+        host: 80
+    script:
+      name: ansible.sh
+      provision: ansible_prov
+      type: shell
+      privileged: true
+  node1:
+    box: centos/7
+    memory: 1024
+    cpus: 1
+  node2:
+    box: centos/7
+    memory: 1024
+    cpus: 1
+  node3:
+    box: centos/7
+    memory: 1024
+    cpus: 1
